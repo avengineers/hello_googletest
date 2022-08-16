@@ -19,6 +19,6 @@ TEST(TestSuiteOne, TestTwoInTestSuiteOne) {
 
 
 TEST(TestSuiteOne, TestThreeInTestSuiteOne) {
-   MockWrapC wrapc;
-  EXPECT_CALL(wrapc, some_number(1)).Times(testing::AtLeast(0));
+  EXPECT_CALL(wrapc, some_number(1)).Times(testing::AtLeast(1));
+  get_two();
 }
