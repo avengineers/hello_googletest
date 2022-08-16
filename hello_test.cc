@@ -1,8 +1,9 @@
 #include <gtest/gtest.h>
-
 extern "C" {
    #include "hello.h"
 }
+
+#include "mockup.cc"
 
 // Demonstrate some basic assertions.
 TEST(TestSuiteOne, TestOneInTestSuiteOne) {
@@ -14,4 +15,10 @@ TEST(TestSuiteOne, TestOneInTestSuiteOne) {
 
 TEST(TestSuiteOne, TestTwoInTestSuiteOne) {
   EXPECT_EQ(1, get_one()) << "Hello";
+}
+
+
+TEST(TestSuiteOne, TestThreeInTestSuiteOne) {
+   MockWrapC wrapc;
+  EXPECT_CALL(wrapc, some_number(1)).Times(testing::AtLeast(0));
 }

@@ -21,11 +21,13 @@ enable_testing()
 add_executable(
   hello_test
   hello.c
+  ##mockup.cc
   hello_test.cc
 )
 target_link_libraries(
   hello_test
   GTest::gtest_main
+  GTest::gmock_main
   Threads::Threads
 )
 
