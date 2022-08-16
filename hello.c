@@ -4,5 +4,6 @@
 int get_one(){return 1;}
 
 int get_two(){
-    return some_number(1);
+    int one = 1;
+    return some_number(one);
 }
