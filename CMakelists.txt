@@ -20,13 +20,31 @@ enable_testing()
 
 add_library(
   a
+  OBJECT
   a.c
+)
+
+add_library(
+  b
+  OBJECT
+  b.c
+)
+
+add_executable(
+  app
+  main.c
+)
+
+target_link_libraries(
+  app
+  a
+  b
 )
 
 add_executable(
   a_test
-  a_mocks.cc
   a_test.cc
+  a_mocks.cc
 )
 target_link_libraries(
   a_test
