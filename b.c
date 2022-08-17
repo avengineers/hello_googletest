@@ -17,5 +17,8 @@ void b_step(void){
 
     int b3;
     b3 = a_get_y3_and_set_u5(0);
-    c_set_u3_and_u4(b3, 0);
+
+    int b4;
+    b4 = a_y4;
+    c_set_u3_and_u4(b3, b4);
 }

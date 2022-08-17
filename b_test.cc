@@ -26,5 +26,12 @@ TEST(TestSuiteOne, TestSignalChain_3) {
   b_step();
 }
 
+TEST(TestSuiteOne, TestSignalChain_4) {
+  a_y4 = 13;
+  EXPECT_CALL(b_mocks, c_set_u3_and_u4(_, 13));
+  b_step();
+  
+}
+
 TEST(TestSuiteOne, TestSignalChain_x) {
 }

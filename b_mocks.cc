@@ -27,3 +27,7 @@ int a_get_y3_and_set_u5(int u5){
 void c_set_u3_and_u4(int u3, int u4){
     b_mocks.c_set_u3_and_u4(u3, u4);
 } /* c_set_u3_and_u4 */
+
+a_y4_t a_y4;
+
+
