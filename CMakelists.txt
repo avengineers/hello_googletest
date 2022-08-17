@@ -14,16 +14,15 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+include(GoogleTest)
+
 find_package(Threads REQUIRED)
 
 enable_testing()
 
-
-add_library(
-  b
-  OBJECT
-  b.c
-)
+include(a.cmake)
+include(b.cmake)
+include(c.cmake)
 
 add_executable(
   app
@@ -34,27 +33,5 @@ target_link_libraries(
   app
   a
   b
+  c
 )
-
-add_library(
-  a
-  OBJECT
-  a.c
-)
-
-add_executable(
-  a_test
-  a_test.cc
-  a_mocks.cc
-)
-
-target_link_libraries(
-  a_test
-  a
-  GTest::gtest_main
-  GTest::gmock_main
-  Threads::Threads
-)
-
-include(GoogleTest)
-gtest_discover_tests(a_test)

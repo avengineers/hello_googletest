@@ -1,5 +1,10 @@
 #include "b.h"
 
-int some_number(int x){
-    return x;
+#include "a.h"
+#include "c.h"
+
+void b_init(void){
+}
+
+void b_step(void){
 }
