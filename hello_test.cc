@@ -5,7 +5,7 @@ extern "C" {
    #include "hello.h"
 }
 
-#include "mockup.cc"
+#include "mockup.h"
 
 // Demonstrate some basic assertions.
 TEST(TestSuiteOne, TestOneInTestSuiteOne) {
