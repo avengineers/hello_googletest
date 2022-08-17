@@ -12,19 +12,17 @@ TEST(TestSuiteOne, TestSignalChain_1) {
     a_y1 = 13;
     b_step();
     EXPECT_EQ(c_u1, 13) << "b_step shall convey value via chain 1.";
-
-    a_y1 = 47;
-    b_step();
-    EXPECT_EQ(c_u1, 47) << "b_step shall convey value via chain 1.";
 }
 
 TEST(TestSuiteOne, TestSignalChain_2) {
   EXPECT_CALL(b_mocks, a_get_y2()).WillRepeatedly(Return(13));
   EXPECT_CALL(b_mocks, c_set_u2(13));
   b_step();
+}
 
-  EXPECT_CALL(b_mocks, a_get_y2()).WillRepeatedly(Return(47));
-  EXPECT_CALL(b_mocks, c_set_u2(47));
+TEST(TestSuiteOne, TestSignalChain_3) {
+  EXPECT_CALL(b_mocks, a_get_y3_and_set_u5(_)).WillRepeatedly(Return(13));
+  EXPECT_CALL(b_mocks, c_set_u3_and_u4(13, _));
   b_step();
 }
 

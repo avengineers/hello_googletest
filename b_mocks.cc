@@ -4,7 +4,14 @@
 /** Create an object */
 class_b_mocks b_mocks;
 
-/** Foreach undefined function create the glue between c-function and the object method. */
+/** 
+   Foreach undefined global variable define it here 
+   Foreach undefined function create the glue between c-function and the object method.
+*/
+
+int a_y1;
+int c_u1;
+
 int a_get_y2(void){
     return b_mocks.a_get_y2();
 } /* a_get_y2 */
@@ -13,6 +20,10 @@ void c_set_u2(int u2){
     b_mocks.c_set_u2(u2);
 } /* c_set_u2 */
 
-/** Foreach undefined global variable define it here */
-int a_y1;
-int c_u1;
+int a_get_y3_and_set_u5(int u5){
+    return b_mocks.a_get_y3_and_set_u5(u5);
+} /* a_get_y3_and_set_u5 */
+
+void c_set_u3_and_u4(int u3, int u4){
+    b_mocks.c_set_u3_and_u4(u3, u4);
+} /* c_set_u3_and_u4 */

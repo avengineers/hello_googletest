@@ -17,6 +17,8 @@ class class_b_mocks {
  public:
   MOCK_METHOD((int), a_get_y2, ());
   MOCK_METHOD((void), c_set_u2, (int));
+  MOCK_METHOD((int), a_get_y3_and_set_u5, (int));
+  MOCK_METHOD((void), c_set_u3_and_u4, (int, int));
 };
 
 extern class_b_mocks b_mocks;
