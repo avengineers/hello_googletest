@@ -6,3 +6,7 @@ class_b_mocks b_mocks;
 
 /** Foreach undefined function create the glue between c-function and the object method. */
 
+
+/** Foreach undefined global variable define it here */
+int a_y1;
+int c_u1;

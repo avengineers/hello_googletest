@@ -8,12 +8,13 @@ extern "C" {
 #include "b_mocks.h"
 
 // Demonstrate some basic assertions.
-TEST(TestSuiteOne, TestOneInTestSuiteOne) {
+TEST(TestSuiteOne, TestSignalChain_1) {
+    a_y1 = 13;
+    b_step();
+    EXPECT_EQ(c_u1, 13) << "b_step shall convey value via chain 1.";
 
-}
-
-
-TEST(TestSuiteOne, TestTwoInTestSuiteOne) {
-
+    a_y1 = 47;
+    b_step();
+    EXPECT_EQ(c_u1, 47) << "b_step shall convey value via chain 1.";
 }
 
