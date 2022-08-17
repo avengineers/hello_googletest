@@ -18,11 +18,6 @@ find_package(Threads REQUIRED)
 
 enable_testing()
 
-add_library(
-  a
-  OBJECT
-  a.c
-)
 
 add_library(
   b
@@ -41,11 +36,18 @@ target_link_libraries(
   b
 )
 
+add_library(
+  a
+  OBJECT
+  a.c
+)
+
 add_executable(
   a_test
   a_test.cc
   a_mocks.cc
 )
+
 target_link_libraries(
   a_test
   a

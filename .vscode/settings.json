@@ -1,9 +1,4 @@
 {
-    "files.associations": {
-        "hello.h": "c",
-        "iut.h": "c",
-        "b.h": "c"
-    },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#64d28b",
         "activityBar.background": "#64d28b",
@@ -23,5 +18,5 @@
         "titleBar.inactiveBackground": "#3dc66d99",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#3dc66d"
+    "peacock.color": "#3dc66d",
 }
