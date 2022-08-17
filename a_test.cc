@@ -2,10 +2,10 @@
 using namespace testing;
 
 extern "C" {
-   #include "hello.h"
+   #include "a.h"
 }
 
-#include "mockup.h"
+#include "a_mocks.h"
 
 // Demonstrate some basic assertions.
 TEST(TestSuiteOne, TestOneInTestSuiteOne) {

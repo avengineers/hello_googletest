@@ -1,5 +1,5 @@
-#include "hello.h"
-#include "component_two.h"
+#include "a.h"
+#include "b.h"
 
 int get_one(){return 1;}
 

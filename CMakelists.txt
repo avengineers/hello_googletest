@@ -19,17 +19,17 @@ find_package(Threads REQUIRED)
 enable_testing()
 
 add_executable(
-  hello_test
-  hello.c
-  mockup.cc
-  hello_test.cc
+  a_test
+  a.c
+  a_mocks.cc
+  a_test.cc
 )
 target_link_libraries(
-  hello_test
+  a_test
   GTest::gtest_main
   GTest::gmock_main
   Threads::Threads
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(a_test)

@@ -3,7 +3,7 @@
 
 /** Include the necessary header files (needed for types, constants, etc.) */
 extern "C" {
-#include "component_two.h"
+#include "b.h"
 } /* extern "C" */
 
 /** One abstract class. For each undefined function create a virtual function within this class */
