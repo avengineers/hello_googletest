@@ -11,5 +11,7 @@ void b_step(void){
     b1 = a_y1;
     c_u1 = b1;
 
-    
+    int b2;
+    b2 = a_get_y2();
+    c_set_u2(b2);
 }

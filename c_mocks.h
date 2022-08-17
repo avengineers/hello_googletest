@@ -8,14 +8,8 @@
 extern "C" {
 } /* extern "C" */
 
-/** One abstract class. For each undefined function create a virtual function within this class */
-class class_c {
- public:    
-};
-
-
 /** One Mockup class. For each undefined function create the resp. MOCK_METHOD line */
-class class_c_mocks : public class_c {
+class class_c_mocks {
  public:
 };
 

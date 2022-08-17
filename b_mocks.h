@@ -10,16 +10,13 @@ extern "C" {
 #include "c.h"
 } /* extern "C" */
 
-/** One abstract class. For each undefined function create a virtual function within this class */
-class class_b {
- public:    
-
-};
-
-
 /** One Mockup class. For each undefined function create the resp. MOCK_METHOD line */
-class class_b_mocks : public class_b {
+
+class class_b_mocks {
+
  public:
+  MOCK_METHOD((int), a_get_y2, ());
+  MOCK_METHOD((void), c_set_u2, (int));
 };
 
 extern class_b_mocks b_mocks;
