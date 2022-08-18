@@ -43,11 +43,20 @@ a_y5_t a_get_y5(void){
         return 0;
 } /* a_get_y5 */
 
-
 int c_get_y3_and_set_u5(int u5){
     if(0 != b_mocks_global_ptr)
         return b_mocks_global_ptr->c_get_y3_and_set_u5(u5);
     else
         return 0;
 } /* c_get_y3_and_set_u5 */
+
+void a_get_y6(int *y6){
+    if(0 != b_mocks_global_ptr)
+        return b_mocks_global_ptr->a_get_y6(y6);
+} /* a_get_y6 */
+
+void c_set_u6(c_u6_t u6){
+    if(0 != b_mocks_global_ptr)
+        return b_mocks_global_ptr->c_set_u6(u6);
+} /* a_set_u6 */
 

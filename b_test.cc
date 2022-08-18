@@ -42,5 +42,9 @@ TEST(b_test, TestSignalChain_5) {
   b_step();
 }
 
-TEST(b_test, TestSignalChain_x) {
+TEST(b_test, TestSignalChain_6) {
+  CREATE_MOCK(mymock);
+  EXPECT_CALL(mymock, a_get_y6(_)).WillRepeatedly(SetArgPointee<0>(13));
+  EXPECT_CALL(mymock, c_set_u6(13));
+  b_step();
 }
