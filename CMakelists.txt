@@ -25,9 +25,34 @@ find_package(Threads REQUIRED)
 
 enable_testing()
 
-include(a.cmake)
-include(b.cmake)
-include(c.cmake)
+macro(create_libary_with_tests NAME)
+  add_library(
+      ${NAME}
+      OBJECT
+      ${NAME}.c
+    )
+
+  add_executable(
+      ${NAME}_test
+      ${NAME}_test.cc
+      ${NAME}_mocks.cc
+  )
+    
+  target_link_libraries(
+    ${NAME}_test
+    ${NAME}
+    GTest::gtest_main
+    GTest::gmock_main
+    Threads::Threads
+  )
+
+  gtest_discover_tests(${NAME}_test)
+endmacro(create_libary_with_tests)
+
+
+create_libary_with_tests(a)
+create_libary_with_tests(b)
+create_libary_with_tests(c)
 
 add_executable(
   app
