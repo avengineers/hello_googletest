@@ -21,4 +21,9 @@ void b_step(void){
     int b4;
     b4 = a_y4;
     c_set_u3_and_u4(b3, b4);
+
+    a_y5_t b5;
+    b5 = a_get_y5();
+    (void)c_get_y3_and_set_u5((int)b5);
+
 }

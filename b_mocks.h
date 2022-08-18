@@ -19,6 +19,8 @@ class class_b_mocks {
   MOCK_METHOD((void), c_set_u2, (int));
   MOCK_METHOD((int), a_get_y3_and_set_u5, (int));
   MOCK_METHOD((void), c_set_u3_and_u4, (int, int));
+  MOCK_METHOD((a_y5_t), a_get_y5, ());
+  MOCK_METHOD((int), c_get_y3_and_set_u5, (int));
 };
 
 extern class_b_mocks *b_mocks_global_ptr;

@@ -36,4 +36,18 @@ void c_set_u3_and_u4(int u3, int u4){
 
 a_y4_t a_y4;
 
+a_y5_t a_get_y5(void){
+    if(0 != b_mocks_global_ptr)
+        return b_mocks_global_ptr->a_get_y5();
+    else
+        return 0;
+} /* a_get_y5 */
+
+
+int c_get_y3_and_set_u5(int u5){
+    if(0 != b_mocks_global_ptr)
+        return b_mocks_global_ptr->c_get_y3_and_set_u5(u5);
+    else
+        return 0;
+} /* c_get_y3_and_set_u5 */
 

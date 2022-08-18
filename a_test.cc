@@ -15,7 +15,7 @@ TEST(b_test, TestOneInTestSuiteOne) {
 }
 
 
-TEST(b_test, TestTwoInTestSuiteOne) {
+TEST(a_test, TestTwoInTestSuiteOne) {
   a_set_u2(13);
   a_step();
   EXPECT_EQ(a_get_y2(), 13) << "Function a_step shall convey input u2 unchanged to output y2.";

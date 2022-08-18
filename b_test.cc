@@ -35,5 +35,12 @@ TEST(b_test, TestSignalChain_4) {
   b_step();
 }
 
+TEST(b_test, TestSignalChain_5) {
+  CREATE_MOCK(mymock);
+  EXPECT_CALL(mymock, a_get_y5()).WillRepeatedly(Return(13));
+  EXPECT_CALL(mymock, c_get_y3_and_set_u5(13));
+  b_step();
+}
+
 TEST(b_test, TestSignalChain_x) {
 }
