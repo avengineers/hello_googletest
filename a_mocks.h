@@ -13,6 +13,9 @@ class class_a_mocks {
  public:
 };
 
-extern class_a_mocks a_mocks;
+extern class_a_mocks *a_mocks_global_ptr;
 
-#endif /* a_mocks_h */
+#define CREATE_MOCK(name)   class_a_mocks name; a_mocks_global_ptr = &name;
+
+#endif /* b_mocks_h */
+

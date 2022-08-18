@@ -15,22 +15,24 @@ TEST(b_test, TestSignalChain_1) {
 }
 
 TEST(b_test, TestSignalChain_2) {
-  EXPECT_CALL(b_mocks, a_get_y2()).WillRepeatedly(Return(13));
-  EXPECT_CALL(b_mocks, c_set_u2(13));
+  CREATE_MOCK(mymock);
+  EXPECT_CALL(mymock, a_get_y2()).WillRepeatedly(Return(13));
+  EXPECT_CALL(mymock, c_set_u2(13));
   b_step();
 }
 
 TEST(b_test, TestSignalChain_3) {
-  EXPECT_CALL(b_mocks, a_get_y3_and_set_u5(_)).WillRepeatedly(Return(13));
-  EXPECT_CALL(b_mocks, c_set_u3_and_u4(13, _));
+  CREATE_MOCK(mymock);
+  EXPECT_CALL(mymock, a_get_y3_and_set_u5(_)).WillRepeatedly(Return(13));
+  EXPECT_CALL(mymock, c_set_u3_and_u4(13, _));
   b_step();
 }
 
 TEST(b_test, TestSignalChain_4) {
+  CREATE_MOCK(mymock);
   a_y4 = 13;
-  EXPECT_CALL(b_mocks, c_set_u3_and_u4(_, 13));
-  //b_step();
-  
+  EXPECT_CALL(mymock, c_set_u3_and_u4(_, 13));
+  b_step();
 }
 
 TEST(b_test, TestSignalChain_x) {

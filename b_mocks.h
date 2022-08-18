@@ -21,6 +21,9 @@ class class_b_mocks {
   MOCK_METHOD((void), c_set_u3_and_u4, (int, int));
 };
 
-extern class_b_mocks b_mocks;
+extern class_b_mocks *b_mocks_global_ptr;
+
+#define CREATE_MOCK(name)   class_b_mocks name; b_mocks_global_ptr = &name;
 
 #endif /* b_mocks_h */
+

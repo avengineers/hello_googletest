@@ -1,0 +1,22 @@
+# pipenv and pytest execution inspired by
+# https://github.com/okeeffed/hello-pytest-github-actions/
+
+name: Linux
+
+on: [push, pull_request]
+
+jobs:
+  build_and_test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build
+        run: |
+          cmake -Bbuild -S.
+          cmake --build build
+
+      - name: test
+        run: |
+          ctest --test-dir build --output-on-failure
