@@ -8,14 +8,14 @@ extern "C" {
 #include "a_mocks.h"
 
 // Demonstrate some basic assertions.
-TEST(TestSuiteOne, TestOneInTestSuiteOne) {
+TEST(b_test, TestOneInTestSuiteOne) {
    a_u1 = 7;
    a_init();
    EXPECT_EQ(a_u1, 0) << "Init shall initialize this variable to zero.";
 }
 
 
-TEST(TestSuiteOne, TestTwoInTestSuiteOne) {
+TEST(b_test, TestTwoInTestSuiteOne) {
   a_set_u2(13);
   a_step();
   EXPECT_EQ(a_get_y2(), 13) << "Function a_step shall convey input u2 unchanged to output y2.";
